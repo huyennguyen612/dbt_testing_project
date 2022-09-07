@@ -1,2 +1,2 @@
 SELECT *
-FROM `warehouse_orders`.Orders
+FROM `c3w3-personal-project`.warehouse_orders.Orders
