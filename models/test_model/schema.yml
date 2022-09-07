@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: orders
+    description: record order from each customer
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: stg_customers
+    description: This model cleans up customer data
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: warehouse
+    description: warehouse information
+    columns:
+      - name: warehouse_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: order_by_warehouse
+    description: This model match each order with its corresponding warehouse
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: warehouse_id
+        tests:
+          - not_null
